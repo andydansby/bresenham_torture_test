@@ -23,7 +23,7 @@
 
 #include "plot.h"
 #include "sine_estimator.h"
-#include "rose.h"
+
 #include "bresenham.h"
 
 #include "string_art.c"
@@ -145,7 +145,7 @@ void options1 (void)
     while (1)
     {
         if (in_key_pressed( IN_KEY_SCANCODE_p ))
-		{
+		{//straight line
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
 			//bresenham_C1(0, 5, 255, 190);
@@ -156,17 +156,12 @@ void options1 (void)
             line_x2 = 215;
             line_y2 = 170;
             bresenham_line_1();
-
-
-
-
-
             in_wait_key();
             break;
 		}
 
 		if (in_key_pressed( IN_KEY_SCANCODE_q ))
-		{
+		{// C version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
 			draw_circle_string_art(80, 100, 25);
@@ -175,17 +170,16 @@ void options1 (void)
 		}
 
 		if (in_key_pressed( IN_KEY_SCANCODE_w ))
-		{
+		{// C version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
 			string_edge_curve(32);
-
             in_wait_key();
             break;
 		}
 
 		if (in_key_pressed( IN_KEY_SCANCODE_e ))
-		{
+		{// C version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
 			draw_radial_spokes(80, 96);
@@ -194,10 +188,8 @@ void options1 (void)
             break;
 		}
 
-
-
 		if (in_key_pressed( IN_KEY_SCANCODE_r ))
-		{
+		{//C version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
 			draw_modulas(120, 2);
@@ -207,7 +199,7 @@ void options1 (void)
 		}
 
 		if (in_key_pressed( IN_KEY_SCANCODE_t ))
-		{
+		{//C version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
 
@@ -265,10 +257,50 @@ void options1 (void)
 		}
 
 		if (in_key_pressed( IN_KEY_SCANCODE_a ))
-		{
+		{//asm version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
 			draw_circle_string_art2(80, 100, 25);
+            in_wait_key();
+            break;
+		}
+
+		if (in_key_pressed( IN_KEY_SCANCODE_s ))
+		{//asm version
+		    zx_cls(PAPER_WHITE | INK_RED);
+			in_wait_nokey();
+			string_edge_curve2(32);
+            in_wait_key();
+            break;
+		}
+
+		if (in_key_pressed( IN_KEY_SCANCODE_d ))
+		{//asm version
+		    zx_cls(PAPER_WHITE | INK_RED);
+			in_wait_nokey();
+			draw_radial_spokes2(80, 96);
+
+            in_wait_key();
+            break;
+		}
+
+		if (in_key_pressed( IN_KEY_SCANCODE_f ))
+		{//asm version
+		    zx_cls(PAPER_WHITE | INK_RED);
+			in_wait_nokey();
+			draw_modulas2(120, 2);
+
+            in_wait_key();
+            break;
+		}
+
+		if (in_key_pressed( IN_KEY_SCANCODE_g ))
+		{//asm version
+		    zx_cls(PAPER_WHITE | INK_RED);
+			in_wait_nokey();
+
+			draw_pin2(15);
+
             in_wait_key();
             break;
 		}
@@ -314,7 +346,7 @@ void options1 (void)
             break;
 		}
 
-
+/*
         if (in_key_pressed( IN_KEY_SCANCODE_1 ))
 		{
 			in_wait_nokey();
@@ -347,73 +379,11 @@ void options1 (void)
             break;
 		}
 
+*/
 
 
 
-		/*if (in_key_pressed( IN_KEY_SCANCODE_a ))
-		{
-		    zx_cls(PAPER_WHITE | INK_RED);
-			in_wait_nokey();
-			ROSE_S_Sine();//routine
-            in_wait_key();
-            break;
-		}*/
 
-        if (in_key_pressed( IN_KEY_SCANCODE_s ))
-		{
-		    zx_cls(PAPER_WHITE | INK_RED);
-			in_wait_nokey();
-			ROSE_Q_Sine();//routine
-            in_wait_key();
-            break;
-		}
-
-		if (in_key_pressed( IN_KEY_SCANCODE_d ))
-		{
-		    zx_cls(PAPER_WHITE | INK_RED);
-			in_wait_nokey();
-			ROSE_Hella_Sine();//routine
-            in_wait_key();
-            break;
-		}
-
-		if (in_key_pressed( IN_KEY_SCANCODE_f ))
-		{
-		    zx_cls(PAPER_WHITE | INK_RED);
-			in_wait_nokey();
-			ROSE_Onecoder_Sine();//routine
-            in_wait_key();
-            break;
-		}
-
-
-        //ROSE_TEST (void)
-        if (in_key_pressed( IN_KEY_SCANCODE_z ))
-		{
-		    zx_cls(PAPER_WHITE | INK_RED);
-			in_wait_nokey();
-			ROSE_curious();//routine
-            in_wait_key();
-            break;
-		}
-
-		if (in_key_pressed( IN_KEY_SCANCODE_x ))
-		{
-		    zx_cls(PAPER_WHITE | INK_RED);
-			in_wait_nokey();
-			ROSE_curious2();//routine
-            in_wait_key();
-            break;
-		}
-
-		if (in_key_pressed( IN_KEY_SCANCODE_c ))
-		{
-		    zx_cls(PAPER_WHITE | INK_RED);
-			in_wait_nokey();
-			ROSE_curious3();//routine
-            in_wait_key();
-            break;
-		}
 
 
     }//end while
