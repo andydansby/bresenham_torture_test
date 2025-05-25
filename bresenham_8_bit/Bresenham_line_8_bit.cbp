@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Bresenham_line_8_bit" />
+		<Option pch_mode="2" />
+		<Option compiler="sdcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Lissajous" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="sdcc" />
+				<Compiler>
+					<Add option="--debug" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Unit filename="../bresenham.h" />
+		<Unit filename="../bresenham_line1.asm" />
+		<Unit filename="../compile.bat" />
+		<Unit filename="../externs.h" />
+		<Unit filename="../hella_plot.asm" />
+		<Unit filename="../main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../mmap.inc" />
+		<Unit filename="../mmap.inc.save" />
+		<Unit filename="../notes.txt" />
+		<Unit filename="../plot.h" />
+		<Unit filename="../rammain.lst" />
+		<Unit filename="../rose.h" />
+		<Unit filename="../sine_estimator.h" />
+		<Unit filename="../string_art.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../timer.h" />
+		<Unit filename="../uncontended.asm" />
+		<Unit filename="../utils/bankloader.bat" />
+		<Unit filename="../utils/loader.bas" />
+		<Unit filename="../variables.h" />
+		<Unit filename="../zpragma.inc" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

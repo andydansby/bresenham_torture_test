@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<results version="2">
+    <cppcheck version="2.13.0" />
+    <errors>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;arch/zx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;arch/zx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="..\main.c" line="10" column="0" />
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="..\main.c" line="11" column="0" />
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="..\main.c" line="12" column="0" />
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;input.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;input.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="..\main.c" line="13" column="0" />
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;float.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;float.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="..\main.c" line="14" column="0" />
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="..\main.c" line="15" column="0" />
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;intrinsic.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;intrinsic.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="..\main.c" line="25" column="0" />
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcX&apos; can be reduced." verbose="The scope of the variable &apos;calcX&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\lissajous.h" line="9" column="11" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcY&apos; can be reduced." verbose="The scope of the variable &apos;calcY&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\lissajous.h" line="10" column="11" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcX&apos; can be reduced." verbose="The scope of the variable &apos;calcX&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\lissajous.h" line="34" column="11" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcY&apos; can be reduced." verbose="The scope of the variable &apos;calcY&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\lissajous.h" line="35" column="11" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcX&apos; can be reduced." verbose="The scope of the variable &apos;calcX&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\lissajous.h" line="58" column="11" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcY&apos; can be reduced." verbose="The scope of the variable &apos;calcY&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\lissajous.h" line="58" column="18" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcX&apos; can be reduced." verbose="The scope of the variable &apos;calcX&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\lissajous.h" line="82" column="11" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcY&apos; can be reduced." verbose="The scope of the variable &apos;calcY&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\lissajous.h" line="82" column="18" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcX&apos; can be reduced." verbose="The scope of the variable &apos;calcX&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="10" column="11" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcY&apos; can be reduced." verbose="The scope of the variable &apos;calcY&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="11" column="11" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;radius&apos; can be reduced." verbose="The scope of the variable &apos;radius&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="15" column="11" />
+            <symbol>radius</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcX&apos; can be reduced." verbose="The scope of the variable &apos;calcX&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="43" column="11" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcY&apos; can be reduced." verbose="The scope of the variable &apos;calcY&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="44" column="11" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;radius&apos; can be reduced." verbose="The scope of the variable &apos;radius&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="48" column="11" />
+            <symbol>radius</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcX&apos; can be reduced." verbose="The scope of the variable &apos;calcX&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="76" column="11" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcY&apos; can be reduced." verbose="The scope of the variable &apos;calcY&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="77" column="11" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;radius&apos; can be reduced." verbose="The scope of the variable &apos;radius&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="81" column="11" />
+            <symbol>radius</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcX&apos; can be reduced." verbose="The scope of the variable &apos;calcX&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="108" column="11" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcY&apos; can be reduced." verbose="The scope of the variable &apos;calcY&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="109" column="11" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;radius&apos; can be reduced." verbose="The scope of the variable &apos;radius&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="113" column="11" />
+            <symbol>radius</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcX&apos; can be reduced." verbose="The scope of the variable &apos;calcX&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="187" column="11" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcY&apos; can be reduced." verbose="The scope of the variable &apos;calcY&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="188" column="11" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;radius&apos; can be reduced." verbose="The scope of the variable &apos;radius&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="192" column="11" />
+            <symbol>radius</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcX&apos; can be reduced." verbose="The scope of the variable &apos;calcX&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="220" column="11" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcY&apos; can be reduced." verbose="The scope of the variable &apos;calcY&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="221" column="11" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;radius&apos; can be reduced." verbose="The scope of the variable &apos;radius&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="225" column="11" />
+            <symbol>radius</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcX&apos; can be reduced." verbose="The scope of the variable &apos;calcX&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="256" column="11" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;calcY&apos; can be reduced." verbose="The scope of the variable &apos;calcY&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="257" column="11" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;radius&apos; can be reduced." verbose="The scope of the variable &apos;radius&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="261" column="11" />
+            <symbol>radius</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;A&apos; shadows outer variable" verbose="Local variable &apos;A&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\sine_estimator.h" line="19" column="17" info="Shadow variable" />
+            <location file="..\variables.h" line="38" column="5" info="Shadowed declaration" />
+            <symbol>A</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;B&apos; shadows outer variable" verbose="Local variable &apos;B&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\sine_estimator.h" line="20" column="17" info="Shadow variable" />
+            <location file="..\variables.h" line="39" column="5" info="Shadowed declaration" />
+            <symbol>B</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;t&apos; shadows outer variable" verbose="Local variable &apos;t&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\lissajous.h" line="8" column="11" info="Shadow variable" />
+            <location file="..\variables.h" line="7" column="7" info="Shadowed declaration" />
+            <symbol>t</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;t&apos; shadows outer variable" verbose="Local variable &apos;t&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\lissajous.h" line="33" column="11" info="Shadow variable" />
+            <location file="..\variables.h" line="7" column="7" info="Shadowed declaration" />
+            <symbol>t</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;t&apos; shadows outer variable" verbose="Local variable &apos;t&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\lissajous.h" line="57" column="11" info="Shadow variable" />
+            <location file="..\variables.h" line="7" column="7" info="Shadowed declaration" />
+            <symbol>t</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;t&apos; shadows outer variable" verbose="Local variable &apos;t&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\lissajous.h" line="81" column="11" info="Shadow variable" />
+            <location file="..\variables.h" line="7" column="7" info="Shadowed declaration" />
+            <symbol>t</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;x_offset&apos; shadows outer variable" verbose="Local variable &apos;x_offset&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="12" column="9" info="Shadow variable" />
+            <location file="..\variables.h" line="36" column="5" info="Shadowed declaration" />
+            <symbol>x_offset</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;y_offset&apos; shadows outer variable" verbose="Local variable &apos;y_offset&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="13" column="9" info="Shadow variable" />
+            <location file="..\variables.h" line="37" column="5" info="Shadowed declaration" />
+            <symbol>y_offset</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;x_offset&apos; shadows outer variable" verbose="Local variable &apos;x_offset&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="45" column="9" info="Shadow variable" />
+            <location file="..\variables.h" line="36" column="5" info="Shadowed declaration" />
+            <symbol>x_offset</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;y_offset&apos; shadows outer variable" verbose="Local variable &apos;y_offset&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="46" column="9" info="Shadow variable" />
+            <location file="..\variables.h" line="37" column="5" info="Shadowed declaration" />
+            <symbol>y_offset</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;x_offset&apos; shadows outer variable" verbose="Local variable &apos;x_offset&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="78" column="9" info="Shadow variable" />
+            <location file="..\variables.h" line="36" column="5" info="Shadowed declaration" />
+            <symbol>x_offset</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;y_offset&apos; shadows outer variable" verbose="Local variable &apos;y_offset&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="79" column="9" info="Shadow variable" />
+            <location file="..\variables.h" line="37" column="5" info="Shadowed declaration" />
+            <symbol>y_offset</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;x_offset&apos; shadows outer variable" verbose="Local variable &apos;x_offset&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="110" column="9" info="Shadow variable" />
+            <location file="..\variables.h" line="36" column="5" info="Shadowed declaration" />
+            <symbol>x_offset</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;y_offset&apos; shadows outer variable" verbose="Local variable &apos;y_offset&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="111" column="9" info="Shadow variable" />
+            <location file="..\variables.h" line="37" column="5" info="Shadowed declaration" />
+            <symbol>y_offset</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;x_offset&apos; shadows outer variable" verbose="Local variable &apos;x_offset&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="189" column="9" info="Shadow variable" />
+            <location file="..\variables.h" line="36" column="5" info="Shadowed declaration" />
+            <symbol>x_offset</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;y_offset&apos; shadows outer variable" verbose="Local variable &apos;y_offset&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="190" column="9" info="Shadow variable" />
+            <location file="..\variables.h" line="37" column="5" info="Shadowed declaration" />
+            <symbol>y_offset</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;x_offset&apos; shadows outer variable" verbose="Local variable &apos;x_offset&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="222" column="9" info="Shadow variable" />
+            <location file="..\variables.h" line="36" column="5" info="Shadowed declaration" />
+            <symbol>x_offset</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;y_offset&apos; shadows outer variable" verbose="Local variable &apos;y_offset&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="223" column="9" info="Shadow variable" />
+            <location file="..\variables.h" line="37" column="5" info="Shadowed declaration" />
+            <symbol>y_offset</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;x_offset&apos; shadows outer variable" verbose="Local variable &apos;x_offset&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="258" column="9" info="Shadow variable" />
+            <location file="..\variables.h" line="36" column="5" info="Shadowed declaration" />
+            <symbol>x_offset</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;y_offset&apos; shadows outer variable" verbose="Local variable &apos;y_offset&apos; shadows outer variable" cwe="398" file0="../main.c">
+            <location file="..\rose.h" line="259" column="9" info="Shadow variable" />
+            <location file="..\variables.h" line="37" column="5" info="Shadowed declaration" />
+            <symbol>y_offset</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcX&apos; is assigned a value that is never used." verbose="Variable &apos;calcX&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\lissajous.h" line="9" column="17" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcY&apos; is assigned a value that is never used." verbose="Variable &apos;calcY&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\lissajous.h" line="10" column="17" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcX&apos; is assigned a value that is never used." verbose="Variable &apos;calcX&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\lissajous.h" line="34" column="17" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcY&apos; is assigned a value that is never used." verbose="Variable &apos;calcY&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\lissajous.h" line="35" column="17" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcX&apos; is assigned a value that is never used." verbose="Variable &apos;calcX&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="10" column="17" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcY&apos; is assigned a value that is never used." verbose="Variable &apos;calcY&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="11" column="17" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;radius&apos; is assigned a value that is never used." verbose="Variable &apos;radius&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="15" column="18" />
+            <symbol>radius</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcX&apos; is assigned a value that is never used." verbose="Variable &apos;calcX&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="43" column="17" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcY&apos; is assigned a value that is never used." verbose="Variable &apos;calcY&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="44" column="17" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;radius&apos; is assigned a value that is never used." verbose="Variable &apos;radius&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="48" column="18" />
+            <symbol>radius</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcX&apos; is assigned a value that is never used." verbose="Variable &apos;calcX&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="76" column="17" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcY&apos; is assigned a value that is never used." verbose="Variable &apos;calcY&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="77" column="17" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;radius&apos; is assigned a value that is never used." verbose="Variable &apos;radius&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="81" column="18" />
+            <symbol>radius</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcX&apos; is assigned a value that is never used." verbose="Variable &apos;calcX&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="108" column="17" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcY&apos; is assigned a value that is never used." verbose="Variable &apos;calcY&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="109" column="17" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;radius&apos; is assigned a value that is never used." verbose="Variable &apos;radius&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="113" column="18" />
+            <symbol>radius</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcX&apos; is assigned a value that is never used." verbose="Variable &apos;calcX&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="187" column="17" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcY&apos; is assigned a value that is never used." verbose="Variable &apos;calcY&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="188" column="17" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;radius&apos; is assigned a value that is never used." verbose="Variable &apos;radius&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="192" column="18" />
+            <symbol>radius</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcX&apos; is assigned a value that is never used." verbose="Variable &apos;calcX&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="220" column="17" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcY&apos; is assigned a value that is never used." verbose="Variable &apos;calcY&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="221" column="17" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;radius&apos; is assigned a value that is never used." verbose="Variable &apos;radius&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="225" column="18" />
+            <symbol>radius</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;r&apos; is assigned a value that is never used." verbose="Variable &apos;r&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="255" column="13" />
+            <symbol>r</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcX&apos; is assigned a value that is never used." verbose="Variable &apos;calcX&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="256" column="17" />
+            <symbol>calcX</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;calcY&apos; is assigned a value that is never used." verbose="Variable &apos;calcY&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="257" column="17" />
+            <symbol>calcY</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;radius&apos; is assigned a value that is never used." verbose="Variable &apos;radius&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\rose.h" line="261" column="18" />
+            <symbol>radius</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;yy1&apos; is assigned a value that is never used." verbose="Variable &apos;yy1&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\bresenham.h" line="40" column="21" />
+            <symbol>yy1</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;xx1&apos; is assigned a value that is never used." verbose="Variable &apos;xx1&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\bresenham.h" line="42" column="17" />
+            <symbol>xx1</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;xx1&apos; is assigned a value that is never used." verbose="Variable &apos;xx1&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\bresenham.h" line="60" column="21" />
+            <symbol>xx1</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;yy1&apos; is assigned a value that is never used." verbose="Variable &apos;yy1&apos; is assigned a value that is never used." cwe="563" file0="../main.c">
+            <location file="..\bresenham.h" line="62" column="17" />
+            <symbol>yy1</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;set_A&apos; is never used." verbose="The function &apos;set_A&apos; is never used." cwe="561">
+            <location file="..\main.c" line="55" column="0" />
+            <symbol>set_A</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;set_B&apos; is never used." verbose="The function &apos;set_B&apos; is never used." cwe="561">
+            <location file="..\main.c" line="66" column="0" />
+            <symbol>set_B</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;set_x_offset&apos; is never used." verbose="The function &apos;set_x_offset&apos; is never used." cwe="561">
+            <location file="..\main.c" line="114" column="0" />
+            <symbol>set_x_offset</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;set_y_offset&apos; is never used." verbose="The function &apos;set_y_offset&apos; is never used." cwe="561">
+            <location file="..\main.c" line="125" column="0" />
+            <symbol>set_y_offset</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;unplot&apos; is never used." verbose="The function &apos;unplot&apos; is never used." cwe="561">
+            <location file="..\plot.h" line="17" column="0" />
+            <symbol>unplot</symbol>
+        </error>
+        <error id="checkersReport" severity="information" msg="Active checkers: 132/592 (use --checkers-report=&lt;filename&gt; to see details)" verbose="Active checkers: 132/592 (use --checkers-report=&lt;filename&gt; to see details)" />
+    </errors>
+</results>

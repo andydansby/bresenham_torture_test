@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug" />
+	<File name="..\sine_estimator.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="374" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="..\main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3667" topLine="78" />
+		</Cursor>
+		<Folding>
+			<Collapse line="39" />
+			<Collapse line="50" />
+			<Collapse line="61" />
+			<Collapse line="72" />
+			<Collapse line="83" />
+			<Collapse line="93" />
+			<Collapse line="105" />
+			<Collapse line="120" />
+			<Collapse line="131" />
+		</Folding>
+	</File>
+	<File name="..\utils\loader.bas" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="40" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\plot.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="280" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\uncontended.asm" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="168" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\string_art.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2396" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="229" />
+		</Folding>
+	</File>
+	<File name="..\rammain.lst" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\compile.bat" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1306" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\bresenham.h" open="1" top="1" tabpos="7" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4424" topLine="12" />
+		</Cursor>
+		<Folding>
+			<Collapse line="1" />
+			<Collapse line="50" />
+			<Collapse line="111" />
+			<Collapse line="257" />
+			<Collapse line="327" />
+			<Collapse line="372" />
+		</Folding>
+	</File>
+	<File name="..\hella_plot.asm" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="19" topLine="28" />
+		</Cursor>
+	</File>
+	<File name="..\timer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1277" topLine="35" />
+		</Cursor>
+	</File>
+	<File name="..\zpragma.inc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1063" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\rose.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3614" topLine="171" />
+		</Cursor>
+	</File>
+	<File name="..\externs.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="284" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\mmap.inc" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3334" topLine="81" />
+		</Cursor>
+	</File>
+	<File name="..\variables.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1249" topLine="30" />
+		</Cursor>
+	</File>
+	<EditorTabsLayout layout="077ae0506815f4d029786da000000002=0;Bresenham_line_8_bit:..\main.c,1;Bresenham_line_8_bit:..\hella_plot.asm,2;Bresenham_line_8_bit:..\externs.h,3;Bresenham_line_8_bit:..\uncontended.asm,4;Bresenham_line_8_bit:..\variables.h,5;Bresenham_line_8_bit:..\string_art.c,*6;Bresenham_line_8_bit:..\bresenham.h@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=369;besth=421;minw=369;minh=421;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=077ae0506815f4d029786da000000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
+</CodeBlocks_layout_file>
