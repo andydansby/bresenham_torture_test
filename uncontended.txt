@@ -1,0 +1,105 @@
+Object  file uncontended.o at $0000: Z80RMF18
+  Name: uncontended
+  CPU:  z80 
+  Section "": 0 bytes
+  Section bss_compiler: 20 bytes
+  Section IGNORE: 0 bytes
+  Section code_crt_init: 0 bytes
+  Section code_home: 0 bytes
+  Section code_compiler: 6867 bytes
+  Section rodata_compiler: 908 bytes
+  Section data_compiler: 44 bytes
+  Section code_user: 47 bytes
+  Symbols:
+    G A $0010: _R_setting (section bss_compiler) (file main.c:869)
+    G A $0008: _YY (section bss_compiler) (file main.c:865)
+    G A $0012: _d_setting (section bss_compiler) (file main.c:871)
+    G A $0004: _t (section bss_compiler) (file main.c:863)
+    G A $0000: _x (section bss_compiler) (file main.c:859)
+    G A $0002: _y (section bss_compiler) (file main.c:861)
+    G A $000C: _yy (section bss_compiler) (file main.c:867)
+    G A $04EE: _Q_cos (section code_compiler) (file main.c:1616)
+    G A $0838: _Q_lissajous (section code_compiler) (file main.c:2044)
+    G A $02CF: _Q_sin (section code_compiler) (file main.c:1333)
+    G A $0DDC: _ROSE_Hella_Sine (section code_compiler) (file main.c:2752)
+    G A $0F46: _ROSE_Onecoder_Sine (section code_compiler) (file main.c:2928)
+    G A $0C72: _ROSE_Q_Sine (section code_compiler) (file main.c:2576)
+    G A $0B08: _ROSE_S_Sine (section code_compiler) (file main.c:2400)
+    G A $10B0: _ROSE_curious (section code_compiler) (file main.c:3104)
+    G A $123A: _ROSE_curious2 (section code_compiler) (file main.c:3286)
+    G A $13A4: _ROSE_curious3 (section code_compiler) (file main.c:3462)
+    G A $047C: _S_cos (section code_compiler) (file main.c:1552)
+    G A $00ED: _S_sine (section code_compiler) (file main.c:1087)
+    G A $01F0: __oneCoder_sin (section code_compiler) (file main.c:1231)
+    G A $04B5: __onecoder_cos (section code_compiler) (file main.c:1584)
+    G A $14CE: _bresenham_C1 (section code_compiler) (file main.c:3620)
+    G A $03C2: _hellaSin (section code_compiler) (file main.c:1449)
+    G A $0527: _hella_cos (section code_compiler) (file main.c:1648)
+    G A $09A4: _lissajous (section code_compiler) (file main.c:2226)
+    G A $1A55: _main (section code_compiler) (file main.c:4551)
+    G A $0560: _onecoder_lissajous (section code_compiler) (file main.c:1680)
+    G A $17AF: _options1 (section code_compiler) (file main.c:4159)
+    G A $0000: _plot (section code_compiler) (file main.c:945)
+    G A $196B: _printOptions (section code_compiler) (file main.c:4366)
+    G A $1659: _set_A (section code_compiler) (file main.c:3872)
+    G A $1692: _set_B (section code_compiler) (file main.c:3920)
+    G A $16CB: _set_R (section code_compiler) (file main.c:3968)
+    G A $15E7: _set_a (section code_compiler) (file main.c:3776)
+    G A $1620: _set_b (section code_compiler) (file main.c:3824)
+    G A $1704: _set_d (section code_compiler) (file main.c:4015)
+    G A $173D: _set_x_offset (section code_compiler) (file main.c:4063)
+    G A $1776: _set_y_offset (section code_compiler) (file main.c:4111)
+    G A $06CC: _smile_lissajous (section code_compiler) (file main.c:1862)
+    G A $0021: _unplot (section code_compiler) (file main.c:979)
+    G A $0099: _wrap (section code_compiler) (file main.c:1043)
+    G A $0000: _DOUBLEPI (section rodata_compiler) (file main.c:964)
+    G A $0008: _HALFPI (section rodata_compiler) (file main.c:970)
+    G A $0004: _PI (section rodata_compiler) (file main.c:967)
+    G A $000C: _QUARTERPI (section rodata_compiler) (file main.c:973)
+    G A $0028: _A (section data_compiler) (file main.c:4666)
+    G A $002A: _B (section data_compiler) (file main.c:4668)
+    G A $0006: _X_start (section data_compiler) (file main.c:4634)
+    G A $0007: _Y_start (section data_compiler) (file main.c:4636)
+    G A $001C: _a_setting (section data_compiler) (file main.c:4656)
+    G A $0014: _amplitude (section data_compiler) (file main.c:4648)
+    G A $001E: _b_setting (section data_compiler) (file main.c:4658)
+    G A $0020: _delta (section data_compiler) (file main.c:4660)
+    G A $0010: _freq (section data_compiler) (file main.c:4646)
+    G A $000D: _halfHeight (section data_compiler) (file main.c:4642)
+    G A $000F: _offSet (section data_compiler) (file main.c:4644)
+    G A $0016: _period (section data_compiler) (file main.c:4650)
+    G A $0018: _phase_shift (section data_compiler) (file main.c:4652)
+    G A $0000: _sinCalc (section data_compiler) (file main.c:4628)
+    G A $0008: _sineCycle (section data_compiler) (file main.c:4638)
+    G A $001A: _vertical_shift (section data_compiler) (file main.c:4654)
+    G A $000C: _waveHeight (section data_compiler) (file main.c:4640)
+    G A $0005: _xWidth (section data_compiler) (file main.c:4632)
+    G A $0024: _x_offset (section data_compiler) (file main.c:4662)
+    G A $0004: _yHeight (section data_compiler) (file main.c:4630)
+    G A $0026: _y_offset (section data_compiler) (file main.c:4664)
+    G A $0026: X_PositionBits (section code_user) (file uncontended.asm:9)
+    G A $002E: _gfx_xy (section code_user) (file uncontended.asm:12)
+    G A $0000: _hellaPlot (section code_user) (file hella_plot.asm:2)
+  Externs:
+    U         ___fs2sint_callee
+    U         ___fsadd_callee
+    U         ___fsdiv_callee
+    U         ___fslt_callee
+    U         ___fsmul
+    U         ___fsmul_callee
+    U         ___fssub_callee
+    U         ___sint2fs_callee
+    U         _abs_fastcall
+    U         _floor_fastcall
+    U         _in_key_pressed_fastcall
+    U         _in_wait_key
+    U         _in_wait_nokey
+    U         _printf
+    U         _puts
+    U         _scanf
+    U         _sin_fastcall
+    U         _zx_border_fastcall
+    U         _zx_cls_fastcall
+    U         _zx_px2bitmask_fastcall
+    U         _zx_pxy2saddr_callee
+    U         _zx_saddr2aaddr_fastcall

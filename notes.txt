@@ -1,0 +1,53 @@
+x_offset = 128
+y_offset = 90
+
+A = 90, 100, 120
+B = 50
+
+https://www.101computing.net/python-turtle-lissajous-curve/
+
+https://www.bing.com/images/search?view=detailV2&ccid=sHjsw2dw&id=2B2A42F9EB43C9EFA38613CCDEE7103DA6BF65AB&thid=OIP.sHjsw2dw9A0rFB4Zdbn97QHaG0&mediaurl=https%3a%2f%2fi.pinimg.com%2foriginals%2fb5%2f36%2f8a%2fb5368a545ebf72332ff9f08135b9aae2.gif&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fRb078ecc36770f40d2b141e1975b9fded%3frik%3dq2W%252fpj0Q597MEw%26pid%3dImgRaw&exph=500&expw=543&q=Lissajous+curve&simid=608043807285537439&ck=FC490B6E04DAF88831978F61D194A904&selectedIndex=145&FORM=IRPRST&ajaxhist=0
+
+
+float delta = 3.14/2;
+int x_offset = 128;
+int y_offset = 90;
+int A = 120;
+int B = 90;
+
+
+
+
+https://www.101computing.net/python-turtle-spirograph/
+rose
+
+R = 125
+r = 75
+d = 125
+angle = 0
+theta = 0.2
+steps = int(6*3.14/theta)
+
+//loop
+for t in range(0,steps):
+
+    angle+=theta
+
+    x = (R - r) * cos(angle)
+    y = (R - r) * sin(angle)
+
+    x = (R - r) * cos(angle) + d * cos(((R-r)/r)*angle)
+    y = (R - r) * sin(angle) - d * sin(((R-r)/r)*angle)
+
+
+printf ("3 -           R setting 62= %d", R_setting);
+printf ("\n");
+printf ("4 -           r setting 37= %d", r_setting);
+printf ("\n");
+printf ("5 -           d setting 60= %d", d_setting);
+printf ("\n\n");
+
+
+
+
+
