@@ -1,29 +1,3 @@
-;local variables
-stepX:	defb 0              ;  direction of travel horizontally
-stepY:	defb 0              ;  direction of travel vertically
-
-steps:	defb 0              ;  the total number of pixels to be plotted
-iterations:	defb 0          ;  loop counter
-
-deltax:	defw 0              ;  distance between points in X axis
-deltay:	defw 0              ;  distance between points in Y axis
-
-PUBLIC fraction
-fraction:	defw 0          ;  pivot point on the next pixel direction
-;local variables
-
-;  Bresenham variables
-PUBLIC _line_x1
-_line_x1:	defb 000        ;  line start point X
-
-PUBLIC _line_y1
-_line_y1:	defb 000        ;  line start point Y
-
-PUBLIC _line_x2
-_line_x2:	defb 000        ;  line end point X
-
-PUBLIC _line_y2
-_line_y2:	defb 000        ;  line end point Y
 
 ;_line_x1    $EC7A      $70 112
 ;_line_y1    $EC7B      $ae 174
@@ -37,18 +11,20 @@ deltaXABS:
 	                           ;  deltaX = abs(x2 - x1);
 	                           ;  first we perform x2-x1
 	xor A                      ;  clear flags and A
-	ld H,A
-	ld D,A
+	ld H,A                     ;  clear high byte of HL
+	ld D,A                     ;  clear high byte of DE
 
-	ld A,(_line_x1)
+	ld A,(_line_x1)            ;  load line start X into E of DE
 	ld E,A
-	ld A,(_line_x2)
+	ld A,(_line_x2)            ;  load line end X into L of HL
 	ld L,A
 
-	sbc HL,DE
-	bit 7,H
-	jp Z,DXABS_finished
-	xor A
+                               ;  https://learn.cemetech.net/index.php/Z80:Math_Routines#abs.5Breg8.5D
+	                           ;  calculate ABS
+	sbc HL,DE                  ;  difference between the two points
+	bit 7,H                    ;  check the high bit of HL to see if the number is negative
+	jp z,DXABS_finished        ;  if high bit not present, then the number is positive
+	xor A                      ;  otherwise the number is negative, so lets calculate ABS
 	sub L
 	ld L,A
 	sbc A,A
@@ -56,7 +32,7 @@ deltaXABS:
 	ld H,A
 
 DXABS_finished:
-	ld (deltax),HL             ;  answer
+	ld (deltax),HL             ;  ABS answer
 
 
 	                           ;  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -64,28 +40,27 @@ deltaYABS:
 	                           ;  deltaY = abs(y2 - y1);
 	                           ;  first we perform y2-y1
 	xor A                      ;  clear flags and A
-	ld H,A
-	                           ;  ld L, A
-	ld D,A
-	                           ;  ld E, A
+	ld H,A                     ;  clear high byte of HL
+	ld D,A                     ;  clear high byte of DE
 
-	ld A,(_line_y1)
+	ld A,(_line_y1)            ;  load line start Y into E of DE
 	ld E,A
 
-	ld A,(_line_y2)
+	ld A,(_line_y2)            ;  load line end Y into L of HL
 	ld L,A
-
-	sbc HL,DE
-	bit 7,H
-	jp Z,DYABS_finished
-	xor A
+                               ;  https://learn.cemetech.net/index.php/Z80:Math_Routines#abs.5Breg8.5D
+                               ;  calculate ABS
+	sbc HL,DE                  ;  difference between the two points
+	bit 7,H                    ;  check the high bit of HL to see if the number is negative
+	jp Z,DYABS_finished        ;  if high bit not present, then the nuber is positive
+	xor A                      ;  otherwise the number is negative, so lets calculate ABS
 	sub L
 	ld L,A
 	sbc A,A
 	sub H
 	ld H,A
 DYABS_finished:
-	ld (deltay),HL             ;  answer
+	ld (deltay),HL             ;  ABS answer
 	                           ;  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 step_X:	                       ;  stepx = (x1 < x2) ? 1 : -1;
@@ -104,8 +79,6 @@ step_X:	                       ;  stepx = (x1 < x2) ? 1 : -1;
 positiveDX:	                   ;  point 2 is larger, going forwards
 	ld A,1                     ;  set a to +1
 	ld (stepX),A               ;  load into variable
-	                           ;  ld A,H
-	                           ;  ld (deltaX),A
 	jp step_Y
 
 	                           ;  ;;;;;;;;;;;;;;;;;;;;;;;
@@ -120,7 +93,6 @@ step_Y:	                       ;  stepy = (y1 < y2) ? 1 : -1;
 	ld H,A                     ;  copy to H register
 	ld A,(_line_y2)            ;  load point X2
 	sub h                      ;  subtract point 1 from point 2
-	                           ;  ld H,A ; store answer in H
 
 	jp c,negativeDY            ;  if carry flag is set, then Y2 is smaller
 	jp z,negativeDY            ;  if equal, then set Y2 as negative
@@ -130,8 +102,6 @@ step_Y:	                       ;  stepy = (y1 < y2) ? 1 : -1;
 positiveDY:
 	ld A,1                     ;  set A to +1
 	ld (stepY),A               ;  load into variable
-	                           ;  ld A,H
-	                           ;  ld (deltaY),A
 	jp steps_calculation
 
 negativeDY:
@@ -144,25 +114,18 @@ steps_calculation:	           ;  steps = max(deltaX, deltaY);
 	ld A,(deltay)              ;  load in length of X axis
 	ld H,A
 	ld A,(deltax)              ;  load in length of Y axis
-	                           ;  sub h ; subtract point 1 from point 2
-	cp h                       ;  compare against deltaX
+	cp H                       ;  compare against deltaX
 	jr c,delta_Y_max           ;  if carry flag is set, then delta_Y is larger
-
-
 
 delta_X_max:
 	ld A,(deltax)              ;  now that deltaX is the maximum, load it into A
-
 	jr max_steps
-
 
 delta_Y_max:
 	ld A,(deltay)              ;  now that deltaY is the maximum, load it into A
 
-
 max_steps:
 	ld (steps),A               ;  now we know the maximum pixels that will be used
-
 
 	ld A,(_line_x1)
 	ld D,A
@@ -170,16 +133,6 @@ max_steps:
 	ld E,A
 	ld (_gfx_xy), DE
 	call _hellaPlot
-
-
-	;_createPixel_variable:
-	;ld A, (_gfx_x)
-	;ld H, A
-	;ld A, (_gfx_y)
-	;ld L, A
-	;ld (_gfx_xy), HL
-	;ret
-
 
 	                           ;  ;;;;;;;;;;;;;;;;;;;;;;;;
 	                           ;  lets start our loop
@@ -193,11 +146,11 @@ end_bresenham:	               ;  <----------------- end routine
 
 DXDY_loop:	                   ;
 	                           ;  if (deltaX > deltaY)
-	ld A,(deltax)
-	ld H,A
-	ld A,(deltay)
-	cp H
-	jp nc,delta_Y_larger
+	ld A,(deltax)              ; load in deltaX
+	ld H,A                     ; move to H
+	ld A,(deltay)              ; load in deltaY
+	cp H                       ; now compare the two
+	jp nc,delta_Y_larger       ; if the Carry is not set then deltaY is larger
 	                           ;  otherwise fall through
 
 
@@ -223,17 +176,16 @@ deltaX_case:	               ;  if (deltaX > deltaY)
 	                           ;  DE now has deltaX / 2 or deltaX >> 1
 
 	ld HL,(deltay)
-	or a                       ;  Clear carry flag before subtraction
-	sbc hl,de                  ;  HL = deltaY - (deltaX / 2)
+	or A                       ;  Clear carry flag before subtraction
+	sbc HL,DE                  ;  HL = deltaY - (deltaX / 2)
 	ld (fraction),HL           ;  write answer
 
 deltaX_loop:	               ;  for (iterations = 0; iterations <= steps; iterations++)
-	                           ;  iterations
-	                           ;  steps
+    ;incrementor
 	xor A                      ;  clear flags
-	ld A,(iterations)
-	ld H,A
-	ld A,(steps)
+	ld A,(iterations)          ; load in iterations
+	ld H,A                     ; move to H
+	ld A,(steps)               ; load in steps
 	cp H                       ;  compare steps with iterations
 	jr z,end_DX                ;  if no difference, Zero flag is set and we can break out
 	                           ;  otherwise continue the loop
@@ -245,7 +197,6 @@ deltaX_loop:	               ;  for (iterations = 0; iterations <= steps; iterati
 	ld E,A
 	ld (_gfx_xy), DE
 	call _hellaPlot
-
 
 	                           ;  everything needs to be adjusted here to assume fraction
 	                           ;  is 16 bit, may have to use DE as well as HL
@@ -262,39 +213,39 @@ deltaX_loop:	               ;  for (iterations = 0; iterations <= steps; iterati
 
 subtract_x_fraction:	       ;  fraction >= 0
 
-	                           ;  fraction -= deltaX;
-	ld HL,(fraction)
-	ld DE,(deltax)
-	sbc HL,DE
-	ld (fraction),HL
+	                           ; fraction -= deltaX;
+	ld HL,(fraction)           ; load HL with fraction
+	ld DE,(deltax)             ; load DE with deltaX
+	sbc HL,DE                  ; subtract deltaX
+	ld (fraction),HL           ; write the answer
 
 	                           ;  y1 += stepY;
-	ld A,(_line_y1)
-	ld H,A
-	ld A,(stepY)
-	add A,H
-	ld (_line_y1),A
+	ld A,(_line_y1)            ; load lineY1
+	ld H,A                     ; move to H
+	ld A,(stepY)               ; load stepY
+	add A,H                    ; add the two
+	ld (_line_y1),A            ; write the answer
 
-	                           ;  fraction < 0
+	                           ; fraction < 0
 add_x_fraction:
-	                           ;  x1 += stepx;
-	ld A,(_line_x1)
-	ld H,A
-	ld A,(stepX)
-	add A,H
-	ld (_line_x1),A
+	                           ; x1 += stepx;
+	ld A,(_line_x1)            ; load lineX1
+	ld H,A                     ; move to H
+	ld A,(stepX)               ; load stepX
+	add A,H                    ; add the two
+	ld (_line_x1),A            ; write the answer
 
 	                           ;  fraction += deltaY;
-	or A
-	ld A,(deltay)
-	ld HL,(fraction)
-	add A,L
-	ld L,A
+	or A                       ; clear our flags
+	ld A,(deltay)              ; load in our deltaY
+	ld HL,(fraction)           ; load in our fraction 16 bit variable
+	add A,L                    ; add the two
+	ld L,A                     ;
 	jr nc,DX_fraction          ;  if no carry, skip incrementing H
 	inc H
 
 DX_fraction:
-	ld (fraction),HL
+	ld (fraction),HL           ; write the Answer
 
 	                           ;  finally, we increment our loop by 1
 	ld A,(steps)
@@ -326,8 +277,8 @@ deltaY_case:	               ;  if (deltaY > deltaX)
 	ld (fraction),HL           ;  write answer
 
 deltaY_loop:	               ;  for (iterations = 0; iterations <= steps; iterations++)
-	                           ;  iterations
-	                           ;  steps
+
+    ;incrementor
 	xor A                      ;  clear flags
 	ld A,(iterations)
 	ld H,A

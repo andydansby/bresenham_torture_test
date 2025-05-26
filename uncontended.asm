@@ -2,7 +2,7 @@ SECTION code_user
 
 
 include "hella_plot.asm"
-include "bresenham_line1.asm"
+include "bresenham.asm"
 
 
 PUBLIC X_PositionBits

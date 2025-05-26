@@ -448,6 +448,7 @@ void drawHypotrochoid(float R, float r, float d)
         a = t;
     }
 
+    //for (t = 0; t <= 2 * PI * r / a; t += 0.01)
     for (t = 0; t <= 2 * PI * r / a; t += 0.01)
     {
         x2 = cx + (int)((R - r) * cos(t) + d * cos((R - r) / r * t));
