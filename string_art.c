@@ -56,12 +56,55 @@ void draw_circle_string_art2(unsigned char radius, unsigned char points, unsigne
         line_x2 = (unsigned char)(centerX + radius * cos(rad_angle2));
         line_y2 = (unsigned char)(centerY + radius * sin(rad_angle2));
 
-        bresenham_line_1();
+        //no line at all loop timing    //3800 ms
+        //bresenham_C0(x1, y1, x2, y2);//7020 ms
+        bresenham_line_1();//5460 ms
+
     }
     timerEnd();
     printf("\x16\x01\x01");
     printf("\n\ntime = %ld MS", timeDiff);
 }
+
+
+void draw_circle_string_art3(unsigned char radius, unsigned char points, unsigned char step)
+{//asm version
+    timerStart();
+    iterations = 0;
+
+    line_x1 = 0;
+    line_y1 = 0;
+    line_x2 = 0;
+    line_y2 = 0;
+
+    rad_angle1 = 0;
+    rad_angle2 = 0;
+
+    rad_angle_step = 2 * PI / points;
+
+    for (iterations = 0; iterations < points; iterations++)
+    {
+        rad_angle1 = iterations * rad_angle_step;
+        rad_angle2 = ((iterations + step) % points) * rad_angle_step;
+
+        line_x1 = (unsigned char)(centerX + radius * cos(rad_angle1));
+        line_y1 = (unsigned char)(centerY + radius * sin(rad_angle1));
+        line_x2 = (unsigned char)(centerX + radius * cos(rad_angle2));
+        line_y2 = (unsigned char)(centerY + radius * sin(rad_angle2));
+
+        //no line at all loop timing    //3800 ms
+        //bresenham_C0(x1, y1, x2, y2);//7020 ms
+        //bresenham_line_1();//5460 ms
+
+        bresenham_line_2();//5440 ms
+
+    }
+    timerEnd();
+    printf("\x16\x01\x01");
+    printf("\n\ntime = %ld MS", timeDiff);
+}
+
+
 
 // Draws a curve-like pattern from two edges using straight lines
 void string_edge_curve(unsigned char steps)
@@ -105,7 +148,7 @@ void string_edge_curve2(unsigned char steps)
         line_y1 = y1;
         line_x2 = x1;
         line_y2 = height;
-        bresenham_line_1();
+        //bresenham_line_1();
 
 
         //bresenham_C0(width, y1, x1, 0);  //
@@ -113,7 +156,7 @@ void string_edge_curve2(unsigned char steps)
         line_y1 = y1;
         line_x2 = x1;
         line_y2 = 0;
-        bresenham_line_1();
+        //bresenham_line_1();
 
     }
     timerEnd();
@@ -154,7 +197,7 @@ void draw_radial_spokes2(unsigned char r, unsigned char num_spokes)
         line_y1 = centerY;
         line_x2 = x2;
         line_y2 = y2;
-        bresenham_line_1();
+        //bresenham_line_1();
     }
     timerEnd();
     printf("\x16\x01\x01");
@@ -202,7 +245,7 @@ void draw_modulas2(unsigned char points, unsigned char k)
         line_y1 = centerY + radius * sin(rad_angle1);
         line_x2 = centerX + radius * cos(rad_angle2);
         line_y2 = centerY + radius * sin(rad_angle2);
-        bresenham_line_1();
+        //bresenham_line_1();
     }
     timerEnd();
     printf("\x16\x01\x01");
@@ -256,7 +299,7 @@ void draw_pin2(unsigned char points)
             line_y1 = x2;
             //line_x2 = x2;
 
-            bresenham_line_1();
+            //bresenham_line_1();
         }
     }
     timerEnd();

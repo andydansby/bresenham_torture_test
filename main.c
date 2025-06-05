@@ -149,13 +149,13 @@ void options1 (void)
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
 			//bresenham_C1(0, 5, 255, 190);
-			bresenham_C1(220, 160, 215, 170);//closer to 180
+			//bresenham_C1(220, 160, 215, 170);//closer to 180
 
 			line_x1 = 220;
             line_y1 = 160;
             line_x2 = 215;
             line_y2 = 170;
-            bresenham_line_1();
+            //bresenham_line_1();
             in_wait_key();
             break;
 		}
@@ -261,6 +261,15 @@ void options1 (void)
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
 			draw_circle_string_art2(80, 100, 25);
+            in_wait_key();
+            break;
+		}
+
+		if (in_key_pressed( IN_KEY_SCANCODE_z ))
+		{//asm version
+		    zx_cls(PAPER_WHITE | INK_RED);
+			in_wait_nokey();
+			draw_circle_string_art3(80, 100, 25);
             in_wait_key();
             break;
 		}
