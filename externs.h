@@ -22,7 +22,5 @@ extern void hellaPlot (void) __z88dk_fastcall;
 extern void createPixel_variable (void) __z88dk_fastcall;
 
 extern void bresenham_line_1 (void) __z88dk_fastcall;
-
-
-
+extern void bresenham_line_2 (void) __z88dk_fastcall;
 
