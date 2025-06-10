@@ -56,14 +56,14 @@ step_X2:	                           ;  stepx = (x1 < x2) ? 1 : -1;
 	sub H                      ;  subtract point 1 from point 2
 	                           ;  ld H,A ; store answer in H
 
-	jp c,negativeDX2           ;  if carry flag is set, then X2 is smaller
-	jp z,negativeDX2           ;  if carry flag is set, then X2 is smaller
+	jp c,negativeDX2            ;  if carry flag is set, then X2 is smaller
+	jp z,negativeDX2            ;  if carry flag is set, then X2 is smaller
 
 	                           ;  fall through if positive, X2 is larger
 	                           ;  ;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-positiveDX2:	               ;  point 2 is larger, going forwards
+positiveDX2:	                   ;  point 2 is larger, going forwards
 	ld A,1                     ;  set a to +1
 	ld (stepX),A               ;  load into variable
 	                           ;  ld A,H
@@ -134,8 +134,8 @@ max_steps2:
 	jp DXDY_loop2
 
 ;ATTENTION
-;end_bresenham2:	               ;  <----------------- end routine
-;	ret
+end_bresenham2:	               ;  <----------------- end routine
+	ret
 ;soon to be obsolete
 
 DXDY_loop2:	                    ;
@@ -182,6 +182,7 @@ deltaX_loop2:	               ;  for (iterations = 0; iterations <= steps; iterat
 	ld H,A                     ; move to H
 	ld A,(steps)               ; load in steps
 	cp H                       ;  compare steps with iterations
+	;jr z,end_DX2              ;  if no difference, Zero flag is set and we can break out
 	ret z
 	                           ;  otherwise continue the loop
 
@@ -193,7 +194,6 @@ deltaX_loop2:	               ;  for (iterations = 0; iterations <= steps; iterat
 	ld (_gfx_xy), BC
 	call _hellaPlot2
 
-check_DeltaX_Fraction:
     ; check to see if fraction is less than 0
     xor A                       ;  clear carry flag
     ld BC,(fraction)            ;  load 16 bit fraction

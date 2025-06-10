@@ -1,8 +1,9 @@
 include "bresenham_line1.asm"
 include "bresenham_line2.asm"
+include "bresenham_line3.asm"
 
-;PUBLIC _bresenham_line_1
-;_bresenham_line_1:
+;PUBLIC _bresenham_line_2
+;_bresenham_line_2:
 ;ret
 
 ;local variables

@@ -144,23 +144,7 @@ void options1 (void)
     //key presses
     while (1)
     {
-        if (in_key_pressed( IN_KEY_SCANCODE_p ))
-		{//straight line
-		    zx_cls(PAPER_WHITE | INK_RED);
-			in_wait_nokey();
-			//bresenham_C1(0, 5, 255, 190);
-			//bresenham_C1(220, 160, 215, 170);//closer to 180
-
-			line_x1 = 220;
-            line_y1 = 160;
-            line_x2 = 215;
-            line_y2 = 170;
-            //bresenham_line_1();
-            in_wait_key();
-            break;
-		}
-
-		if (in_key_pressed( IN_KEY_SCANCODE_q ))
+        if (in_key_pressed( IN_KEY_SCANCODE_q ))
 		{// C version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
@@ -256,6 +240,24 @@ void options1 (void)
             break;
 		}
 
+		if (in_key_pressed( IN_KEY_SCANCODE_p ))
+		{//straight line
+		    zx_cls(PAPER_WHITE | INK_RED);
+			in_wait_nokey();
+			//bresenham_C1(0, 5, 255, 190);
+			//bresenham_C1(220, 160, 215, 170);//closer to 180
+
+			line_x1 = 220;
+            line_y1 = 160;
+            line_x2 = 215;
+            line_y2 = 170;
+            //bresenham_line_1();
+            in_wait_key();
+            break;
+		}
+
+
+
 		if (in_key_pressed( IN_KEY_SCANCODE_a ))
 		{//asm version
 		    zx_cls(PAPER_WHITE | INK_RED);
@@ -270,6 +272,15 @@ void options1 (void)
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
 			draw_circle_string_art3(80, 100, 25);
+            in_wait_key();
+            break;
+		}
+
+		if (in_key_pressed( IN_KEY_SCANCODE_m ))
+		{//asm version
+		    zx_cls(PAPER_WHITE | INK_RED);
+			in_wait_nokey();
+			draw_circle_string_art5(80, 100, 25);
             in_wait_key();
             break;
 		}
@@ -328,11 +339,12 @@ void options1 (void)
 
 
 		/////////////////////////////////
-		if (in_key_pressed( IN_KEY_SCANCODE_m ))
+		if (in_key_pressed( IN_KEY_SCANCODE_b ))
 		{
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
-			draw_lissajous(128, 96, 100, 80, 3, 2, 0, 500);
+			//draw_lissajous(128, 96, 100, 80, 3, 2, 0, 500);
+			draw_circle_string_art4(80, 100, 25);
 
             in_wait_key();
             break;

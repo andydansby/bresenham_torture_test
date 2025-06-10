@@ -31,6 +31,71 @@ void draw_circle_string_art(unsigned char radius, unsigned char points, unsigned
     printf("\n\ntime = %ld MS", timeDiff);
 }
 
+void draw_circle_string_art4(unsigned char radius, unsigned char points, unsigned char step)
+{//c version
+    timerStart();
+    iterations = 0;
+
+    x1 = 0;
+    y1 = 0;
+    x2 = 0;
+    y2 = 0;
+
+    rad_angle1 = 0;
+    rad_angle2 = 0;
+
+    rad_angle_step = 2 * PI / points;
+
+    for (iterations = 0; iterations < points; iterations++)
+    {
+        rad_angle1 = iterations * rad_angle_step;
+        rad_angle2 = ((iterations + step) % points) * rad_angle_step;
+
+        x1 = (unsigned char)(centerX + radius * cos(rad_angle1));
+        y1 = (unsigned char)(centerY + radius * sin(rad_angle1));
+        x2 = (unsigned char)(centerX + radius * cos(rad_angle2));
+        y2 = (unsigned char)(centerY + radius * sin(rad_angle2));
+
+        bresenham_C10(x1, y1, x2, y2);
+    }
+    timerEnd();
+    printf("\x16\x01\x01");
+    printf("\n\ntime = %ld MS", timeDiff);
+}
+
+void draw_circle_string_art5(unsigned char radius, unsigned char points, unsigned char step)
+{//asm version
+    timerStart();
+    iterations = 0;
+
+    x1 = 0;
+    y1 = 0;
+    x2 = 0;
+    y2 = 0;
+
+    rad_angle1 = 0;
+    rad_angle2 = 0;
+
+    rad_angle_step = 2 * PI / points;
+
+    for (iterations = 0; iterations < points; iterations++)
+    {
+        rad_angle1 = iterations * rad_angle_step;
+        rad_angle2 = ((iterations + step) % points) * rad_angle_step;
+
+        line_x1 = (unsigned char)(centerX + radius * cos(rad_angle1));
+        line_y1 = (unsigned char)(centerY + radius * sin(rad_angle1));
+        line_x2 = (unsigned char)(centerX + radius * cos(rad_angle2));
+        line_y2 = (unsigned char)(centerY + radius * sin(rad_angle2));
+        bresenham_line_3();
+    }
+    timerEnd();
+    printf("\x16\x01\x01");
+    printf("\n\ntime = %ld MS", timeDiff);
+}
+
+
+
 void draw_circle_string_art2(unsigned char radius, unsigned char points, unsigned char step)
 {//asm version
     timerStart();
