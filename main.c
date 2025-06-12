@@ -36,115 +36,13 @@
 
 void printOptions (void);
 
-void set_a(void)
-{
-	zx_cls(PAPER_WHITE | INK_BLUE);
-	zx_border (2);
-	printf("Input a setting  1-50 Current = %d\n", a_setting);
-	printf("\n");
-	printf("Try 2,  larger is wider");
-	printf("\n");
-	scanf("%d", &a_setting);
-}
-
-void set_b(void)
-{
-	zx_cls(PAPER_WHITE | INK_BLUE);
-	zx_border (2);
-	printf("Input a setting  1-50 Current = %d\n", b_setting);
-	printf("\n");
-	printf("Try 3,  larger is wider");
-	printf("\n");
-	scanf("%d", &b_setting);
-}
-
-void set_A(void)
-{
-	zx_cls(PAPER_WHITE | INK_BLUE);
-	zx_border (2);
-	printf("Input a setting  1-255 Current = %d\n", A);
-	printf("\n");
-	printf("Try 2,  larger is wider");
-	printf("\n");
-	scanf("%d", &A);
-}
-
-void set_B(void)
-{
-	zx_cls(PAPER_WHITE | INK_BLUE);
-	zx_border (2);
-	printf("Input a setting  1-192 Current = %d\n", B);
-	printf("\n");
-	printf("Try 3,  larger is wider");
-	printf("\n");
-	scanf("%d", &B);
-}
-
-void set_R(void)
-{
-	zx_cls(PAPER_WHITE | INK_BLUE);
-	zx_border (2);
-	printf("Input a setting  0-10 Current = %d", R_setting);
-	printf("\n");
-	printf("Try 2");
-	printf("\n");
-	scanf("%d", &R_setting);
-}
-
-/*void set_r()
-{
-	zx_cls(PAPER_WHITE | INK_BLUE);
-	zx_border (2);
-	printf("Input a setting  0-100 Current = %d\n", r_setting);
-	printf("\n");
-	printf("Try 37");
-	printf("\n");
-	scanf("%d", &r_setting);
-}*/
-
-void set_d(void)
-{
-	zx_cls(PAPER_WHITE | INK_BLUE);
-	zx_border (2);
-	printf("Input a setting  1-10 Current = %d\n", d_setting);
-	printf("\n");
-	printf("Try 1");
-	printf("\n");
-	scanf("%d", &d_setting);
-}
-
-
-
-
-
-void set_x_offset(void)
-{
-	zx_cls(PAPER_WHITE | INK_BLUE);
-	zx_border (2);
-	printf("Input a setting  1-255 Current = %d\n", x_offset);
-	printf("\n");
-	printf("Try 128,  larger is wider");
-	printf("\n");
-	scanf("%d", &x_offset);
-}
-
-void set_y_offset(void)
-{
-	zx_cls(PAPER_WHITE | INK_BLUE);
-	zx_border (2);
-	printf("Input a setting  1-192 Current = %d\n", y_offset);
-	printf("\n");
-	printf("Try 90,  larger is wider");
-	printf("\n");
-	scanf("%d", &y_offset);
-}
-
 void options1 (void)
 {
     //key presses
     while (1)
     {
-        if (in_key_pressed( IN_KEY_SCANCODE_q ))
+        //first row
+        if (in_key_pressed( IN_KEY_SCANCODE_1 ))
 		{// C version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
@@ -153,7 +51,7 @@ void options1 (void)
             break;
 		}
 
-		if (in_key_pressed( IN_KEY_SCANCODE_w ))
+		if (in_key_pressed( IN_KEY_SCANCODE_2 ))
 		{// C version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
@@ -162,7 +60,7 @@ void options1 (void)
             break;
 		}
 
-		if (in_key_pressed( IN_KEY_SCANCODE_e ))
+		if (in_key_pressed( IN_KEY_SCANCODE_3 ))
 		{// C version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
@@ -172,7 +70,7 @@ void options1 (void)
             break;
 		}
 
-		if (in_key_pressed( IN_KEY_SCANCODE_r ))
+		if (in_key_pressed( IN_KEY_SCANCODE_4 ))
 		{//C version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
@@ -182,7 +80,7 @@ void options1 (void)
             break;
 		}
 
-		if (in_key_pressed( IN_KEY_SCANCODE_t ))
+		if (in_key_pressed( IN_KEY_SCANCODE_5 ))
 		{//C version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
@@ -193,20 +91,8 @@ void options1 (void)
             break;
 		}
 
-		if (in_key_pressed( IN_KEY_SCANCODE_y ))
-		{
-		    zx_cls(PAPER_WHITE | INK_RED);
-			in_wait_nokey();
-
-			//draw_vortex(30);
-			drawLineWhirlpool(50, 100, 3.0);
-
-            in_wait_key();
-            break;
-		}
-
-        if (in_key_pressed( IN_KEY_SCANCODE_u ))
-		{
+        /*if (in_key_pressed( IN_KEY_SCANCODE_6 ))
+		{//C version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
 
@@ -215,50 +101,10 @@ void options1 (void)
 
             in_wait_key();
             break;
-		}
+		}*/
 
-		if (in_key_pressed( IN_KEY_SCANCODE_i ))
-		{
-		    zx_cls(PAPER_WHITE | INK_RED);
-			in_wait_nokey();
-
-			//drawHypotrochoid(50, 35, 60);
-			drawSpiralPattern(95, 20);
-
-            in_wait_key();
-            break;
-		}
-
-		if (in_key_pressed( IN_KEY_SCANCODE_o ))
-		{
-		    zx_cls(PAPER_WHITE | INK_RED);
-			in_wait_nokey();
-
-			chord_grid(80,100,3.2);
-
-            in_wait_key();
-            break;
-		}
-
-		if (in_key_pressed( IN_KEY_SCANCODE_p ))
-		{//straight line
-		    zx_cls(PAPER_WHITE | INK_RED);
-			in_wait_nokey();
-			//bresenham_C1(0, 5, 255, 190);
-			//bresenham_C1(220, 160, 215, 170);//closer to 180
-
-			line_x1 = 220;
-            line_y1 = 160;
-            line_x2 = 215;
-            line_y2 = 170;
-            //bresenham_line_1();
-            in_wait_key();
-            break;
-		}
-
-
-
-		if (in_key_pressed( IN_KEY_SCANCODE_a ))
+        //second row
+		if (in_key_pressed( IN_KEY_SCANCODE_q ))
 		{//asm version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
@@ -267,25 +113,7 @@ void options1 (void)
             break;
 		}
 
-		if (in_key_pressed( IN_KEY_SCANCODE_z ))
-		{//asm version
-		    zx_cls(PAPER_WHITE | INK_RED);
-			in_wait_nokey();
-			draw_circle_string_art3(80, 100, 25);
-            in_wait_key();
-            break;
-		}
-
-		if (in_key_pressed( IN_KEY_SCANCODE_m ))
-		{//asm version
-		    zx_cls(PAPER_WHITE | INK_RED);
-			in_wait_nokey();
-			draw_circle_string_art5(80, 100, 25);
-            in_wait_key();
-            break;
-		}
-
-		if (in_key_pressed( IN_KEY_SCANCODE_s ))
+		if (in_key_pressed( IN_KEY_SCANCODE_w ))
 		{//asm version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
@@ -294,7 +122,7 @@ void options1 (void)
             break;
 		}
 
-		if (in_key_pressed( IN_KEY_SCANCODE_d ))
+        if (in_key_pressed( IN_KEY_SCANCODE_e ))
 		{//asm version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
@@ -304,7 +132,7 @@ void options1 (void)
             break;
 		}
 
-		if (in_key_pressed( IN_KEY_SCANCODE_f ))
+        if (in_key_pressed( IN_KEY_SCANCODE_r ))
 		{//asm version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
@@ -314,7 +142,7 @@ void options1 (void)
             break;
 		}
 
-		if (in_key_pressed( IN_KEY_SCANCODE_g ))
+		if (in_key_pressed( IN_KEY_SCANCODE_t ))
 		{//asm version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
@@ -323,19 +151,88 @@ void options1 (void)
 
             in_wait_key();
             break;
-		}
+		}//g
 
-
-
-        if (in_key_pressed( IN_KEY_SCANCODE_l ))
-		{
+        /*if (in_key_pressed( IN_KEY_SCANCODE_y ))
+		{//asm version
 		    zx_cls(PAPER_WHITE | INK_RED);
 			in_wait_nokey();
-			draw_lissajous(128, 96, 100, 80, 3, 2, 0, 500);
+
+			drawLinearWhirlpool2(80, 30, 5);
+
+            in_wait_key();
+            break;
+		}//h
+		*/
+
+
+
+
+
+        //third row
+		if (in_key_pressed( IN_KEY_SCANCODE_a ))
+		{//asm version
+		    zx_cls(PAPER_WHITE | INK_RED);
+			in_wait_nokey();
+			draw_circle_string_art3(80, 100, 25);
+            in_wait_key();
+            break;
+		}
+
+        if (in_key_pressed( IN_KEY_SCANCODE_s ))
+		{//asm version
+		    zx_cls(PAPER_WHITE | INK_RED);
+			in_wait_nokey();
+			string_edge_curve3(32);
+            in_wait_key();
+            break;
+		}
+
+        if (in_key_pressed( IN_KEY_SCANCODE_d ))
+		{//asm version
+		    zx_cls(PAPER_WHITE | INK_RED);
+			in_wait_nokey();
+			draw_radial_spokes3(80, 96);
 
             in_wait_key();
             break;
 		}
+
+
+		//fourth row
+		if (in_key_pressed( IN_KEY_SCANCODE_z ))
+		{//asm version
+		    zx_cls(PAPER_WHITE | INK_RED);
+			in_wait_nokey();
+			draw_circle_string_art5(80, 100, 25);
+            in_wait_key();
+            break;
+		}
+
+        if (in_key_pressed( IN_KEY_SCANCODE_x ))
+		{//asm version
+		    zx_cls(PAPER_WHITE | INK_RED);
+			in_wait_nokey();
+			string_edge_curve4(32);
+            in_wait_key();
+            break;
+		}
+
+        if (in_key_pressed( IN_KEY_SCANCODE_c ))
+		{//asm version
+		    zx_cls(PAPER_WHITE | INK_RED);
+			in_wait_nokey();
+			draw_radial_spokes4(80, 96);
+
+            in_wait_key();
+            break;
+		}
+
+
+
+
+
+
 
 
 		/////////////////////////////////
@@ -367,45 +264,6 @@ void options1 (void)
             break;
 		}
 
-/*
-        if (in_key_pressed( IN_KEY_SCANCODE_1 ))
-		{
-			in_wait_nokey();
-			set_a();//routine
-            in_wait_key();
-            break;
-		}
-
-		if (in_key_pressed( IN_KEY_SCANCODE_2 ))
-		{
-			in_wait_nokey();
-			set_b();//routine
-            in_wait_key();
-            break;
-		}
-
-		if (in_key_pressed( IN_KEY_SCANCODE_3 ))
-		{
-			in_wait_nokey();
-			set_R();//routine
-            in_wait_key();
-            break;
-		}
-
-		if (in_key_pressed( IN_KEY_SCANCODE_4 ))
-		{
-			in_wait_nokey();
-			set_d();//routine
-            in_wait_key();
-            break;
-		}
-
-*/
-
-
-
-
-
 
     }//end while
 }//end options1
@@ -418,26 +276,13 @@ void printOptions (void)
         zx_border (2);
         printf("\x16\x01\x02");
 
-        printf ("Welcome to the Bresenham Tester V1.0");
-        printf ("\n");
-        printf ("press a key for test");
-        printf ("\n");
+        printf ("Welcome to the Bresenham Tester V1.0\n");
+        printf ("press a key for test\n");
 
-		printf ("1 -           a setting (1) = %d", a_setting);
+        printf ("1 - 6 Various C-Bresenham Line Tests");
         printf ("\n");
-		printf ("2 -           b setting (2) = %d", b_setting);
-		printf ("\n\n");
-
-
-        printf ("Q - String Circle C-Bresenham Line");
+        printf ("Q - T Various ASM 1-Bresenham Line Tests");
         printf ("\n");
-        printf ("W- Lissajous onecoder estimate");
-        printf ("\n");
-        printf ("E- Lissajous SMILE estimate");
-        printf ("\n");
-        printf ("R- Lissajous QSIN estimate");
-        printf ("\n");
-        printf ("P - C Bresenham Line");
 
         printf ("\n\n");
 
@@ -492,6 +337,12 @@ void main(void)
         printOptions();
     }
 
+}
+
+void end_junk ()
+{
+    unsigned char a = 0;
+    return a;
 }
 
 //leave blank line after

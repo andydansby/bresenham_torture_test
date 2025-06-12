@@ -145,6 +145,8 @@ void bresenham_C1(unsigned char x1, unsigned char y1, unsigned char x2, unsigned
 
 //C0  = 7020
 //C10 = 7500
+//16 bit works
+/*
 void bresenham_C10(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2)
 {//Andy's Version
 
@@ -207,3 +209,4 @@ void bresenham_C10(unsigned int x1, unsigned int y1, unsigned int x2, unsigned i
     }//end else
 }
 
+*/

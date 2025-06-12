@@ -68,11 +68,8 @@ positiveDY3:
 
 steps_calculation3:	           ;  steps = max(deltaX, deltaY);
 	                           ;  deltaX in D deltaY in E
-	xor A                      ;  clear flags
-	ld A,E                     ;  load in length of X axis
-	ld H,A
+	ld H,E
 	ld A,D                     ;  load in length of Y axis
-	                           ;  sub h ; subtract point 1 from point 2
 	cp H                       ;  compare against deltaX
 	jr c,delta_Y_max3          ;  if carry flag is set, then delta_Y is larger
 
@@ -90,17 +87,14 @@ max_steps3:
 	                           ;  ;;;;;;;;;;;;;;;;;;;;;;;;
 	                           ;  lets start our loop
 	                           ;  ;;;;;;;;;;;;;;;;;;;;;;;;
-	;jp DXDY_loop3
 
-
-;DXDY_loop:
 DXDY_loop3:	                   ;  deltaX in D deltaY in E
 	                           ;  if (deltaX > deltaY)
 	                           ;  ld A,(deltaX)
 	ld H,D                     ;  load deltaX
 	ld A,E                     ;  load deltaY
-	cp H
-	jp nc,delta_Y_larger3
+	cp H                       ;  compare deltaX and deltaY
+	jp nc,delta_Y_larger3      ;  if no carry the deltaY is larger
 	                           ;  otherwise fall through
 
 delta_X_larger3:	           ;  if (deltaX > deltaY)
@@ -109,7 +103,6 @@ delta_X_larger3:	           ;  if (deltaX > deltaY)
 	                           ;  else if (deltaY >= deltaX)
 delta_Y_larger3:
 	jp deltaY_case3
-	ret
 
 	                           ;  NOW we need to start treating
 	                           ;  deltaX and deltaY as 16 bit variables
@@ -127,13 +120,9 @@ deltaX_case3:	               ;  if (deltaX > deltaY)
 	ld A,E                     ;  load deltaY into A
 	sub C                      ;  subtract deltaX
 	ld (fraction),A            ;  store answer
-	;seems OK
-
 
 deltaX_loop3:	               ;  for (iterations = 0; iterations <= steps; iterations++)
-	                           ;  iterations
-	                           ;  steps
-	xor A                      ;  clear flags
+
 	ld A,(iterations)
 	ld H,A
 	ld A,(steps)
@@ -165,11 +154,11 @@ check_DeltaX_Fraction3:
 
 subtract_x_fraction3:	       ;  fraction >= 0
 
-	;  deltaX in D deltaY in E
-	;  fraction is already in A
-	;fraction -= deltaX;
-	sbc A, D		;subtract fraction and deltaX
-	ld (fraction), A	;answer
+	                           ;  deltaX in D deltaY in E
+	                           ;  fraction is already in A
+	                           ;  fraction -= deltaX;
+	sbc A, D		           ;  subtract fraction and deltaX
+	ld (fraction), A	       ;  answer
 	;17T
 	;4 bytes
 
@@ -188,8 +177,8 @@ add_x_fraction3:
 		                       ;  fraction += deltaY;
 	                           ;  deltaX in D deltaY in E
 
-	ld A, (fraction)	       ;load in fraction
-	add A, E		           ;add fraction and deltaY
+	ld A, (fraction)	       ;  load in fraction
+	add A, E		           ;  add fraction and deltaY
 	ld (fraction), A
 
 	                           ;  x1 += stepx;
@@ -206,9 +195,6 @@ deltaX_loop_increment3:
 	ld (steps),A               ;  rewrite steps
 
 	jp deltaX_loop3            ;  jump back to start of loop
-
-
-
 
 	                           ;  ;;;;;;;;;;;;;;;;;;;;;;
 
@@ -235,8 +221,8 @@ deltaY_loop3:	               ;  for (iterations = 0; iterations <= steps; iterat
 	cp H                       ;  compare steps with iterations
 	ret Z                      ;  Line finished
 	                           ;  otherwise continue the loop
-							   ; 39 / 45T
-							   ; 9 Bytes
+							   ;  39 / 45T
+							   ;  9 Bytes
 
 	                           ;  now plot our point
 	ld A,(_line_x1)
@@ -245,8 +231,8 @@ deltaY_loop3:	               ;  for (iterations = 0; iterations <= steps; iterat
 	ld L,A
 	ld (_gfx_xy), HL
 	call _hellaPlot2
-		                       ; 71 T + routine time
-	                           ; 15 bytes
+		                       ;  71 T + routine time
+	                           ;  15 bytes
 
 check_DeltaY_Fraction3:
                                ;  check to see if fraction is less than 0
@@ -255,8 +241,8 @@ check_DeltaY_Fraction3:
 	ld A,(fraction)            ;  load in fraction
 	sub L                      ;  is it less than 0
 	jp m,add_y_fraction3       ;  L is > 0 Sign flag is ON
-                               ; 35 T
-                               ; 9 bytes
+                               ;  35 T
+                               ;  9 bytes
 
 subtract_y_fraction3:	       ;  fraction >= 0
 
